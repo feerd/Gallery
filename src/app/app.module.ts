@@ -7,7 +7,7 @@ import {HttpClientModule} from "@angular/common/http";
 import { FileUploadComponent } from './file-upload/file-upload.component';
 import { AppRoutingModule } from './app-routing.module';
 import { GalleryComponent } from './gallery/gallery.component';
-import { UploadFormComponent } from './upload-form/upload-form.component';
+import { ShowroomComponent } from './showroom/showroom.component';
 
 
 
@@ -16,7 +16,7 @@ import { UploadFormComponent } from './upload-form/upload-form.component';
     AppComponent,
     FileUploadComponent,
     GalleryComponent,
-    UploadFormComponent
+    ShowroomComponent,
   ],
   imports: [
     BrowserModule,
