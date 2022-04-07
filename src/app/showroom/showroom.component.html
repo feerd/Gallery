@@ -1,0 +1,33 @@
+
+<div class="item">
+  <img src="{{picture?.filePath}}" alt="Card Image" class="image">
+</div>
+<table *ngIf="picture">
+  <tr>
+    <th>Metadaten</th>
+  </tr>
+  <tr>
+    <td>Id:</td>
+    <td><textarea id="txt_id">{{picture.id}}</textarea></td>
+  </tr>
+  <tr>
+    <td>Filename:</td>
+    <td><textarea id="txt_name">{{picture.fileName}}</textarea></td>
+  </tr>
+  <tr>
+    <td>Zeit:</td>
+    <td><textarea id="txt_time">{{picture.fileDateTime}}</textarea></td>
+  </tr>
+  <tr>
+    <td>Mime Typ:</td>
+    <td><textarea id="txt_mime">{{picture.fileMimeTyp}}</textarea></td>
+  </tr>
+  <tr>
+    <td>Grösse:</td>
+    <td><textarea id="txt_size">{{picture.fileSize}}</textarea></td>
+  </tr>
+  <tr>
+    <td>Filepfad:</td>
+    <td><textarea id="txt_path">{{picture.filePath}}</textarea></td>
+  </tr>
+</table>
