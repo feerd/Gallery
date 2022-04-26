@@ -8,26 +8,35 @@
   </tr>
   <tr>
     <td>Id:</td>
-    <td><textarea id="txt_id">{{picture.id}}</textarea></td>
+    <td><input type="text" value="{{picture.id}}" #id></td>
   </tr>
   <tr>
     <td>Filename:</td>
-    <td><textarea id="txt_name">{{picture.fileName}}</textarea></td>
+    <td><input type="text" value="{{picture.fileName}}" #name></td>
   </tr>
   <tr>
     <td>Zeit:</td>
-    <td><textarea id="txt_time">{{picture.fileDateTime}}</textarea></td>
+    <td><input type="text" value="{{picture.fileDateTime}}" #time></td>
   </tr>
   <tr>
     <td>Mime Typ:</td>
-    <td><textarea id="txt_mime">{{picture.fileMimeTyp}}</textarea></td>
+    <td><input type="text" value="{{picture.fileMimeTyp}}" #mime></td>
   </tr>
   <tr>
     <td>Grösse:</td>
-    <td><textarea id="txt_size">{{picture.fileSize}}</textarea></td>
+    <td><input type="text" value="{{picture.fileSize}}" #size></td>
   </tr>
   <tr>
     <td>Filepfad:</td>
-    <td><textarea id="txt_path">{{picture.filePath}}</textarea></td>
+    <td><input type="text" value="{{picture.filePath}}" #path></td>
+  </tr>
+  <tr>
+    <td><button (click)="updatePicture(id,name,time,mime,size,path)">Update</button></td>
+    <td><button (click)="deletePicture(id)">Delete</button></td>
   </tr>
 </table>
+<br>
+<br>
+<br>
+
+

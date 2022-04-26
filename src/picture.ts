@@ -4,7 +4,5 @@ export interface Picture {
   fileDateTime: Date;
   fileSize: number;
   fileMimeTyp: string;
-  height: number;
-  width: number;
   filePath: string;
 }

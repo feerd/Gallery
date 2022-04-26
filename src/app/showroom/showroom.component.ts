@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 import {Picture} from "../../picture";
 import {PictureService} from "../picture.service";
 import {GalleryService} from "../gallery.service";
@@ -10,7 +10,9 @@ import {HttpErrorResponse} from "@angular/common/http";
   styleUrls: ['./showroom.component.css']
 })
 export class ShowroomComponent implements OnInit {
+  @ViewChild('txt_id') txt_id1 : ElementRef;
 
+  str : String;
   id : number;
   picture : Picture;
   number: Number;
@@ -41,14 +43,44 @@ export class ShowroomComponent implements OnInit {
 
   }
 
-  public savePicture(){
-    let txt_id = document.getElementById("txt_id");
-    let txt_name = document.getElementById("txt_name");
-    let txt_time = document.getElementById("txt_time");
-    let txt_mime = document.getElementById("txt_mime");
-    let txt_size = document.getElementById("txt_size");
-    let txt_path = document.getElementById("txt_path");
+  public updatePicture(id : any, name : any, time : any,mime : any,size : any, path : any){
+    let picture : Picture = new class implements Picture {
+      fileDateTime: Date;
+      fileMimeTyp: string;
+      fileName: string;
+      filePath: string;
+      fileSize: number;
+      id: number;
+    };
 
+    picture.id = id.value;
+    picture.fileName = name.value;
+    picture.fileDateTime = time.value;
+    picture.fileMimeTyp = mime.value;
+    picture.fileSize = size.value;
+    picture.filePath = path.value;
+
+    this.pictureService.updatePicture(picture).subscribe(
+      (response: Picture) => {
+        console.log(response);
+      },
+      (error: HttpErrorResponse) => {
+        alert(error.message)
+      }
+    )
+
+  }
+
+  public deletePicture(id : any){
+
+    this.pictureService.deletePicture(id.value).subscribe(
+      (response: any) => {
+        console.log(response);
+      },
+      (error: HttpErrorResponse) => {
+        alert(error.message)
+      }
+    )
 
   }
 

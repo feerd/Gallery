@@ -8,6 +8,7 @@ import { FileUploadComponent } from './file-upload/file-upload.component';
 import { AppRoutingModule } from './app-routing.module';
 import { GalleryComponent } from './gallery/gallery.component';
 import { ShowroomComponent } from './showroom/showroom.component';
+import { HomeComponent } from './home/home.component';
 
 
 
@@ -17,6 +18,7 @@ import { ShowroomComponent } from './showroom/showroom.component';
     FileUploadComponent,
     GalleryComponent,
     ShowroomComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,

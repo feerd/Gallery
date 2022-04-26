@@ -78,8 +78,6 @@ export class FileUploadComponent implements OnInit {
       this.picture.fileMimeTyp= file.type;
       this.picture.fileSize = file.size;
       this.picture.filePath= '../assets/img/'+this.picture.fileName;
-      this.picture.height=1080;
-      this.picture.width=1920;
       this.pictureService.addPicture(this.picture).subscribe(
         (response: Picture) => {
           console.log(response.fileName);

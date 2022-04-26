@@ -24,7 +24,6 @@ export class GalleryComponent implements OnInit{
     this.pictureService.getPictures().subscribe(
       (response: Picture[]) => {
         this.pictures = response;
-        console.log(this.pictures.length)
       },
       (error: HttpErrorResponse) => {
         alert(error.message)
