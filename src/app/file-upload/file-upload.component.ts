@@ -72,7 +72,6 @@ export class FileUploadComponent implements OnInit {
       this.error = "";
       this.draggedFiles = files;
       let file: File = this.draggedFiles[0];
-      let buffer = file.arrayBuffer();
       this.picture.fileName= file.name;
       this.picture.fileDateTime = new Date(file.lastModified);
       this.picture.fileMimeTyp= file.type;
@@ -90,44 +89,6 @@ export class FileUploadComponent implements OnInit {
     }
   }
 
-/*
-alternative upload
-  onChange(event: any) {
-    var reader = new FileReader();
-
-
-    this.picture.fileName= event.target.files[0].name;
-    this.picture.fileDateTime = new Date(event.target.files[0].lastModified);
-    this.picture.fileMimeTyp= event.target.files[0].type;
-    this.picture.fileSize = event.target.files[0].size;
-    this.picture.filePath= '../assets/img/'+this.picture.fileName;
-    this.picture.height=1080;
-    this.picture.width=1920;
-
-    reader.onload = (event: any) => {
-
-      //this.picture.fileData = event.target.result;
-      this.pictureService.addPicture(this.picture).subscribe(
-        (response: Picture) => {
-          console.log(response.fileName);
-        },
-        (error: HttpErrorResponse) => {
-          alert(error.message)
-        }
-      );
-      //##########################
-
-      this.url = event.target.result;
-    };
-
-    reader.onerror = (event: any) => {
-      console.log("File could not be read: " + event.target.error.code);
-    };
-
-    reader.readAsDataURL(event.target.files[0]);
-
-  }
-*/
 
 
 
